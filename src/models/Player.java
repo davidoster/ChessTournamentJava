@@ -4,13 +4,14 @@
  * and open the template in the editor.
  */
 package models;
-
+import interfaces.IPlayer;
 /**
  *
  * @author George.Pasparakis
  */
-public class Player extends Naming {
-    
+public class Player extends Naming implements IPlayer {
+    private int counter = 0;
+            
     public Player() {
         
     }
@@ -20,5 +21,16 @@ public class Player extends Naming {
         System.out.println(name);
     }
     
-    
+    /*
+        In this method we need to figure out 
+        for the specific game which move the player does
+    */
+    public String moves(Game game) {
+        String result = "";
+        counter++;
+        result = Integer.toString(counter);
+//        result = counter + "";
+//        result = String.valueOf(counter);
+        return(result);
+    }
 }

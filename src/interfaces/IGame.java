@@ -6,6 +6,7 @@
 package interfaces;
 
 import models.Player;
+import models.Clock;
 
 /**
  *
@@ -17,6 +18,23 @@ public interface IGame {
         - each player moves one after the other
     */
     public void start(Player[] players);
+    
+    public void playersMove(Player[] players, Clock c);
+    
+//    public String gameState(Player[] players);
+//    
+//    public void round(Player[] players);
+//    
+//    public String takeTurns(Player[] players, int time);
+//    
+//    public int startClock(Player[] players, int turn);
+//    
+//    public void gameStart(Player p1, Player p2);
+//    
+//    public int gameIsOn(int counter);
+//    
+//    public int gameDuration(Player[] players, Clock c);
+    
     
     public static String dummy() {
 //        System.out.println("dfdfsdf");
