@@ -14,4 +14,5 @@ import models.Player;
  */
 public interface ITournament {
     void introducePlayers(List<Player> players);
+    void startTournament();
 }

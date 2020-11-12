@@ -10,17 +10,20 @@ import interfaces.IGame;
  * @author George.Pasparakis
  */
 public class Game extends Naming implements IGame {
+    private Player[] players;
+    
     public  Game() {
        System.out.println("Game 1");
     }
     
     public Game(String name, Player[] players) {
         this.setName(name);
-        System.out.println(this.getName());
-        System.out.println("Player " + players[0] + " plays against Player " + players[1]);
+        this.start(players);
     }
     
-    public void start() {
-        
+    public void start(Player[] players) {
+        System.out.println(this.getName());
+        System.out.println("Player " + players[0] + " plays against Player " + players[1]);
+        this.players = players;
     }
 }

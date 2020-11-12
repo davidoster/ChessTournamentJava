@@ -26,8 +26,8 @@ public class Tournament extends Naming implements ITournament {
     // overloaded
     public Tournament(String name) {
         this.setName(name);
-        System.out.println("Welcome to the " + getName());
-        introducePlayers(players);
+        this.startTournament();
+       
         
 //        Player playersPerGame[] = new Player[] { players.get(0), players.get(1)};
 //        
@@ -36,9 +36,7 @@ public class Tournament extends Naming implements ITournament {
 //        playersPerGame[1] = players.get(1);
         
         
-        games = new Game[] { new Game("Game 1", new Player[] { players.get(0), players.get(1)}), 
-                             new Game("Game 2", new Player[] { players.get(0), players.get(2)}), 
-                             new Game("Game 3", new Player[] { players.get(0), players.get(3)})};
+        
 //        Game game = new Game("Game 1");
 //        Game game1 = new Game("Game 2");
 //        Game game2 = new Game("Game 3");
@@ -49,6 +47,14 @@ public class Tournament extends Naming implements ITournament {
 
 //        Player p = new Player("Paspa");
         
+    }
+    
+    public void startTournament() {
+        System.out.println("Welcome to the " + getName());
+        introducePlayers(players);
+        games = new Game[] { new Game("Game 1", new Player[] { players.get(0), players.get(1)}), 
+                             new Game("Game 2", new Player[] { players.get(0), players.get(2)}), 
+                             new Game("Game 3", new Player[] { players.get(0), players.get(3)})};
     }
     
     public void introducePlayers(List<Player> players) {
