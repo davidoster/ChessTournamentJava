@@ -29,8 +29,16 @@ public class Tournament extends Naming implements ITournament {
         System.out.println("Welcome to the " + getName());
         introducePlayers(players);
         
+//        Player playersPerGame[] = new Player[] { players.get(0), players.get(1)};
+//        
+//        // Game 1 - Paspa - Gasparov
+//        playersPerGame[0] = players.get(0);
+//        playersPerGame[1] = players.get(1);
         
-        games = new Game[] { new Game("Game 1"), new Game("Game 2"), new Game("Game 3") };
+        
+        games = new Game[] { new Game("Game 1", new Player[] { players.get(0), players.get(1)}), 
+                             new Game("Game 2", new Player[] { players.get(0), players.get(2)}), 
+                             new Game("Game 3", new Player[] { players.get(0), players.get(3)})};
 //        Game game = new Game("Game 1");
 //        Game game1 = new Game("Game 2");
 //        Game game2 = new Game("Game 3");

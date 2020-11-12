@@ -20,11 +20,19 @@ public class Naming {
         this.name = name;
     }
     
+    
+    @Override
+    public String toString() {
+        return(name);
+    }
+    
     /*
     public
     (default)
     protected
     private
     */
+
+    
     
 }

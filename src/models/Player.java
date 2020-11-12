@@ -19,4 +19,6 @@ public class Player extends Naming {
         this.setName(name);
         System.out.println(name);
     }
+    
+    
 }

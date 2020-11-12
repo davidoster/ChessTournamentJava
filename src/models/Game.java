@@ -14,9 +14,10 @@ public class Game extends Naming implements IGame {
        System.out.println("Game 1");
     }
     
-    public Game(String name) {
+    public Game(String name, Player[] players) {
         this.setName(name);
         System.out.println(this.getName());
+        System.out.println("Player " + players[0] + " plays against Player " + players[1]);
     }
     
     public void start() {
