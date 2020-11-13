@@ -18,6 +18,8 @@ public class Game extends Naming implements IGame {
     
     public Game(String name, Player[] players) {
         this.setName(name);
+        players[0].setFirstGame(this);
+        players[1].setFirstGame(this);
         this.start(players);
     }
     
@@ -25,24 +27,20 @@ public class Game extends Naming implements IGame {
         System.out.println(this.getName());
         System.out.println("Player " + players[0] + " plays against Player " + players[1]);
         this.players = players;
-        this.playersMove(players, new Clock());
-        
+        this.playersMove(players, new Clock(600, 15));
     }
     
     public void playersMove(Player[] players, Clock c) {
         // Player X plays move m against Player Y
         // 15" * 4 = 1' * 10 = 10' == 600"
         // 600" = 40 cycles, 20 cycles
-        int timer = 600;
-        for (int i = 0; i < 40; i++) {
-            System.out.println("Player " + players[0] + " plays move " +
-                                       players[0].moves(this) +
-                                   " against Player " + players[1]);
-            System.out.println("Time is: " + timer);
-            System.out.println("Player " + players[1] + " plays move " +
-                                       players[1].moves(this) +
-                                   " against Player " + players[0]);
-           timer -= 15;
+       
+        for (int i = 0; i < 20; i++) {
+            String s = "Player " + players[0] + " plays move " + players[0].moves(this, c) + " against Player " + players[1];
+            s += "\nTime is: " + c.getTotalTime();
+            s += "\nPlayer " + players[1] + " plays move " + players[1].moves(this, c) + " against Player " + players[0];
+            s += "\nTime is: " + c.getTotalTime();
+            System.out.println(s);
         }
     }
 }

@@ -4,11 +4,12 @@
  * and open the template in the editor.
  */
 package interfaces;
+import models.Clock;
 import models.Game;
 /**
  *
  * @author George.Pasparakis
  */
 public interface IPlayer {
-    String moves(Game game);
+    String moves(Game game, Clock c);
 }

@@ -10,5 +10,8 @@ package interfaces;
  * @author George.Pasparakis
  */
 public interface IClock {
-    
+    void setTotalTime(int totalTime);
+    void setTick(int tick);
+    void tick();
+    int getTotalTime();
 }
